@@ -1,0 +1,13 @@
+<header class="p-3 bg-dark text-white">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="javascript:void(0);" [routerLink]="['person']" class="nav-link px-2 text-white">Personas</a></li>
+        <li><a href="javascript:void(0);" [routerLink]="['user']" class="nav-link px-2 text-white">Usuarios</a></li>
+      </ul>
+      <div class="text-end">
+        <button type="button" (click)="navigateTo()" class="btn btn-outline-light me-2">Login</button>
+      </div>
+    </div>
+  </div>
+</header>

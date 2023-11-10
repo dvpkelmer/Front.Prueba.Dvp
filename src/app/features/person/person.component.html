@@ -1,0 +1,93 @@
+<div class="container-fluid">
+  <div class="row justify-content-center mt-5 ">
+    <div class="col-lg-6">
+      <div class="card px-5 py-5 shadow rounded border-0">
+        <div class="row text-center">
+          <h1>Registro de Persona</h1>
+        </div>
+        <form [formGroup]="personForm" autocomplete="off">
+          <div class="row mb-3">
+            <div class="col-lg-6">
+              <label for="exampleFormControlInput1" class="form-label px-0">Nombres</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="name">
+              <ng-container
+                *ngIf="nameFormControl?.invalid && (nameFormControl?.dirty || nameFormControl?.touched)">
+                <div class="text-danger p-2" *ngIf="nameFormControl?.errors">
+                  <div *ngIf="nameFormControl?.errors?.['required']">
+                    Este campo es requerido.
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+            <div class="col-lg-6">
+              <label for="exampleFormControlInput1" class="form-label px-0">Apellidos</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" formControlName="lastName">
+              <ng-container
+                *ngIf="lastNameFormControl?.invalid && (lastNameFormControl?.dirty || lastNameFormControl?.touched)">
+                <div class="text-danger p-2" *ngIf="lastNameFormControl?.errors">
+                  <div *ngIf="lastNameFormControl?.errors?.['required']">
+                    Este campo es requerido.
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col-lg-6">
+              <label for="exampleFormControlInput1" class="form-label px-0">Número de identificación</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1"
+                formControlName="identificationNumber">
+              <ng-container
+                *ngIf="identificationNumberFormControl?.invalid && (identificationNumberFormControl?.dirty || identificationNumberFormControl?.touched)">
+                <div class="text-danger p-2" *ngIf="identificationNumberFormControl?.errors">
+                  <div *ngIf="identificationNumberFormControl?.errors?.['required']">
+                    Este campo es requerido.
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+            <div class="col-lg-6">
+              <label for="exampleFormControlInput1" class="form-label px-0">Tipo de identificación</label>
+              <select class="form-select" aria-label="Default select example" formControlName="identificationType">
+                <option selected>Elija una opcion</option>
+                <option value="C.C">C.C</option>
+                <option value="T.I">T.I</option>
+                <option value="C.E">C.E</option>
+              </select>
+              <ng-container
+                *ngIf="identificationTypeFormControl?.invalid && (identificationTypeFormControl?.dirty || identificationTypeFormControl?.touched)">
+                <div class="text-danger p-2" *ngIf="identificationTypeFormControl?.errors">
+                  <div *ngIf="identificationTypeFormControl?.errors?.['required']">
+                    Este campo es requerido.
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col-lg-6">
+              <label for="exampleFormControlInput1" class="form-label px-0">Email</label>
+              <input type="email" class="form-control" id="exampleFormControlInput1"
+                formControlName="email">
+              <ng-container
+                *ngIf="emailFormControl?.invalid && (emailFormControl?.dirty || emailFormControl?.touched)">
+                <div class="text-danger p-2" *ngIf="emailFormControl?.errors">
+                  <div *ngIf="emailFormControl?.errors?.['required']">
+                    Este campo es requerido.
+                  </div>
+                </div>
+              </ng-container>
+            </div>           
+          </div>
+
+          <div class="row ">
+            <button type="button" [disabled]="!personForm.valid" (click)="save()"
+              class="btn btn-success py-2">Registrar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
